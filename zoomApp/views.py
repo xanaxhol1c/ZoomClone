@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.urls import reverse
 from django.contrib import messages
 from functools import wraps
 from django.contrib.auth.hashers import make_password, check_password
@@ -65,4 +66,20 @@ def register(request):
     
 @login_required 
 def dashboard(request):
-    return render(request, 'zoomApp/dashboard.html')
+    user_id = request.session.get('user_id')
+    user = User.objects.get(id=user_id)
+    return render(request, 'zoomApp/dashboard.html', {'user' : user})
+
+
+def meeting(request):
+    user_id = request.session.get('user_id')
+    user = User.objects.get(id=user_id)
+    return render(request, 'zoomApp/meeting.html', {'user' : user})
+
+def join_meeting(request):
+    if request.method == "POST":
+        meeting_id = request.POST.get('meeting_id')
+        return redirect(reverse('zoomApp:meeting') + f'?roomID={meeting_id}')
+    return render(request, 'zoomApp/join_meeting.html')
+
+

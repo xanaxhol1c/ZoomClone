@@ -51,6 +51,21 @@ a{
     gap: 25px;
 }
 
+.dashboard-card{
+    display: flex;
+    flex-direction: column;
+    width: 400px; 
+    background-color: rgb(216, 216, 216);
+    border-radius: 10px;
+}
+
+.btns-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
 .input-field{
     height: 40px;
     border: solid 1px;
@@ -68,3 +83,4 @@ a{
     background-color: #f8d7da;
     border-color: #f5c6cb;
 }
+
