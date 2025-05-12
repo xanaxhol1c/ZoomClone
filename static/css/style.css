@@ -1,0 +1,70 @@
+header{
+    background-color: blue;
+    display: flex;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.header-container{
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    width: 100%;
+    margin-left: 25px;
+    margin-top: 5px;
+    justify-content: flex-start;
+    align-items: center;
+    color: white;
+}
+
+.authorization-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 70%;
+    gap: 15px;
+}
+
+.main-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.authorization-card{
+    display: flex;
+    flex-direction: column;
+    width: 350px; 
+    background-color: rgb(216, 216, 216);
+    border-radius: 10px;
+}
+
+.authorization-card-input-fields{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.input-field{
+    height: 40px;
+    border: solid 1px;
+    border-radius: 10px;
+}
+
+.submit-btn{
+    justify-content: center;
+    height: 45px;
+    font-size: 20px;
+}
+
+.alert-error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
