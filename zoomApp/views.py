@@ -56,13 +56,13 @@ def register(request):
             User.objects.create(username=username, email=email, password=password)
             messages.success(request, 'Registration successful')
             if request.headers.get('Hx-Request'):
-                return render(request, 'partials/login_form.html')
+                return render(request, 'partials/login_form.html', status=201)
             return redirect('zoomApp:index')
-        except:
-            messages.error(request, 'Registration failed')
+        except Exception as e:
+            messages.error(request, f'Registration failed : {e}')
             if request.headers.get('Hx-Request'):
                 return render(request, 'partials/register_form.html')
-            return render(request, 'zoomApp/index.html', {'show_register' : True})
+            return render(request, 'zoomApp/index.html', {'show_register' : True}, status=400)
     
 @login_required 
 def dashboard(request):
