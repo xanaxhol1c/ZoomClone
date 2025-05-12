@@ -59,7 +59,7 @@ def register(request):
                 return render(request, 'partials/login_form.html', status=201)
             return redirect('zoomApp:index')
         except Exception as e:
-            messages.error(request, f'Registration failed : {e}')
+            messages.error(request, f'Registration failed')
             if request.headers.get('Hx-Request'):
                 return render(request, 'partials/register_form.html')
             return render(request, 'zoomApp/index.html', {'show_register' : True}, status=400)
